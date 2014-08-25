@@ -1,0 +1,33 @@
+<h2>We have the following guns, mein Fuhrer:</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <% @guns.each do |gun| %>
+  <tr>
+    <td><%= gun.id %></td>
+    <td><%= gun.name %></td>
+  </tr>
+  <% end %>
+  <% if @guns.empty? %>
+    <td colspan="2">
+      OK, so now we have no guns. For your sake, I really hope that's what you wanted.
+    </td>
+  <% end %>
+</table>
+
+<blink>
+<font color="red" size="3">
+  ACHTUNG!<br>
+  The following button is for EMERGENCY USE ONLY!<br>
+  It is impossible to undo the destruction it causes!<br>
+  Hans, if you touch the button again, I swear, you're going to spend the rest of your days cleaning latrines on Pluton!<br>
+  SRSLY Hans, I'm watching you...
+</font>
+</blink>
+
+<form action="self-destruct" method="post">
+  <input type="submit" value="Self-destruct all the guns"/>
+</form>
